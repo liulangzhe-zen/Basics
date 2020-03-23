@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    //glide
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    api 'jp.wasabeef:glide-transformations:3.3.0'
+
+      //万能适配器
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    //沉浸状态栏基础依赖包，必须要依赖
+    api 'com.gyf.immersionbar:immersionbar:3.0.0'
+    // fragment快速实现（可选）
+    api 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+
+    //高斯模糊
+    api 'jp.wasabeef:blurry:3.0.0'
+
+    //上拉刷新，下拉加载
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'  //没有使用特殊Header，可以不加这行
+
+    //分包
+    api 'com.android.support:multidex:1.0.2'
+
+    api 'com.commit451:PhotoView:1.2.4'//图片缩放
+
+     api 'com.google.code.gson:gson:2.8.5'
+
+    //内存检测
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+
+    //textView 添加标签 一个或多个
+    api 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
+//    //router
+//    api "com.alibaba:arouter-api:1.4.1",
+//    apt "com.alibaba:arouter-compiler:1.2.2"
+
+
+
+//    //网络框架
+//    api 'com.squareup.retrofit2:retrofit:2.6.0'
+//    api 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+//    api 'io.reactivex.rxjava2:rxjava:2.1.12'
+//    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+//    api 'com.squareup.retrofit2:converter-gson:2.6.0'
+//    api 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
+//    api 'com.squareup.retrofit2:converter-scalars:2.6.0'
+//    api 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+//    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+//    api 'com.trello.rxlifecycle2:rxlifecycle-navi:2.1.0'
+//    api 'com.google.code.gson:gson:2.2.4'
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DomeMainActivity">
+
+    <com.basics.ui.widget.PasswordEditText
+        android:id="@+id/ed_pass_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="58dp"
+        android:background="@null"
+        android:ellipsize="end"
+        android:hint="请输入密码"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ed_pass_word"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="43dp"
+        android:background="#EEEEEE" />
+
+    <include layout="@layout/lint_view" />
+
+
+</LinearLayout>
